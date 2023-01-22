@@ -14,4 +14,8 @@ final class SecondViewModel {
   init (model: User) {
     self.model = model
   }
+  
+  func showDetail() {
+    
+  }
 }

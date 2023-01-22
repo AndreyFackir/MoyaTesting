@@ -15,6 +15,8 @@ enum UserService {
   case deleteUser(id: Int)
 }
 
+// MARK: - TargetType
+
 extension UserService: TargetType {
   public var baseURL: URL {
     guard let url = URL(string: "https://jsonplaceholder.typicode.com/") else { return .init(fileURLWithPath: "")}
@@ -55,6 +57,4 @@ extension UserService: TargetType {
   public var headers: [String : String]? {
     return ["Content-Type": "application/json"]
   }
-  
-  
 }

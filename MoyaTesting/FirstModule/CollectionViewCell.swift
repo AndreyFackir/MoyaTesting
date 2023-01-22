@@ -21,7 +21,6 @@ final class CollectionViewCell: UICollectionViewCell {
   
   // MARK: - Properties
   
-  
   private let title: UILabel = {
     let element = UILabel()
     element.translatesAutoresizingMaskIntoConstraints = false
@@ -42,9 +41,7 @@ final class CollectionViewCell: UICollectionViewCell {
   func configureCell(model: User) {
     title.text = "\(model.id)"
     userName.text = model.name
-    
   }
-  
 }
 // MARK: - Setup
 

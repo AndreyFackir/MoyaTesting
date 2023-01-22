@@ -9,10 +9,10 @@ import Foundation
 import Moya
 
 final class FirstViewModel {
-
+  
   var users = [User]()
   var provider = MoyaProvider<UserService>()
-
+  
   
   // MARK: - Methods
   func fetchUsers(completion: @escaping () -> ()) {
@@ -57,19 +57,6 @@ final class FirstViewModel {
             self.users[index] = modifyUser
             completion()
           }
-        case .failure(let error):
-          print(error.localizedDescription)
-      }
-    }
-  }
-  
-  func deleteUser(user: User,index: Int, completion: @escaping () -> ()) {
-    provider.request(.deleteUser(id: user.id)) { result in
-      switch result {
-          
-        case .success(let response):
-          self.users.remove(at: index)
-          completion()
         case .failure(let error):
           print(error.localizedDescription)
       }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
   
   let viewModel = FirstViewModel()
   
@@ -15,8 +15,6 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     setup()
   }
-  
-  
   
   // MARK: - Properties
   
@@ -44,7 +42,6 @@ class ViewController: UIViewController {
       self.mainCollectionView.reloadData()
     }
   }
-  
 }
 
 // MARK: -  Setup
@@ -72,8 +69,6 @@ private extension ViewController {
     navigationController?.topViewController?.navigationItem.rightBarButtonItem = plusImage
     plusImage.tintColor = .green
   }
-  
-  
   
   func setConstraints() {
     NSLayoutConstraint.activate([
@@ -103,7 +98,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     viewModel.updateUser(user: user, index: indexPath.item) {
       self.mainCollectionView.reloadData()
     }
-    print("Ad")
   }
 }
 
